@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PlantAI - Smart Plant Care</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN / SIGNUP ================= -->
+
+    <section id="authSection" class="auth-section">
+
+        <div class="auth-card">
+
+            <div class="logo">🌿 PlantAI</div>
+
+            <p class="subtitle">
+                Your intelligent plant care assistant
+            </p>
+
+            <!-- LOGIN -->
+
+            <div id="loginBox">
+
+                <h2>Welcome Back 🌱</h2>
+
+                <p class="small-text">
+                    Login to continue
+                </p>
+
+                <form id="loginForm">
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Email"
+                        required
+                    >
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Password"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+                <p id="loginMessage" class="message"></p>
+
+                <p class="switch-text">
+                    Don't have an account?
+
+                    <button
+                        type="button"
+                        id="showSignup"
+                        class="link-btn"
+                    >
+                        Sign Up
+                    </button>
+                </p>
+
+            </div>
+
+
+            <!-- SIGNUP -->
+
+            <div id="signupBox" class="hidden">
+
+                <h2>Create Account 🌱</h2>
+
+                <p class="small-text">
+                    Start your PlantAI journey
+                </p>
+
+                <form id="signupForm">
+
+                    <input
+                        type="text"
+                        id="signupName"
+                        placeholder="Full Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        placeholder="Email"
+                        required
+                    >
+
+                    <input
+                        type="password"
+                        id="signupPassword"
+                        placeholder="Password"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Create Account
+                    </button>
+
+                </form>
+
+                <p id="signupMessage" class="message"></p>
+
+                <p class="switch-text">
+                    Already have an account?
+
+                    <button
+                        type="button"
+                        id="showLogin"
+                        class="link-btn"
+                    >
+                        Login
+                    </button>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="dashboard" class="hidden">
+
+        <!-- NAVBAR -->
+
+        <nav class="navbar">
+
+            <div class="nav-logo">
+                🌿 PlantAI
+            </div>
+
+            <div class="nav-links">
+
+                <button onclick="goHome()">
+                    Home
+                </button>
+
+                <button onclick="scrollToRecommendation()">
+                    Recommendations
+                </button>
+
+                <button onclick="showMyPlants()">
+                    My Plants
+                </button>
+
+                <button onclick="showPlantDoctor()">
+                    Plant Doctor
+                </button>
+
+                <button onclick="scrollToCare()">
+                    Plant Care
+                </button>
+
+                <button
+                    id="logoutBtn"
+                    class="logout-btn"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </nav>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <p class="hero-small">
+                    AI PLANT ASSISTANT
+                </p>
+
+                <h1>
+                    Find Your
+                    <span>Perfect Plant</span>
+                    🌱
+                </h1>
+
+                <p>
+                    Get smart plant recommendations,
+                    manage your collection and learn
+                    how to keep your plants healthy.
+                </p>
+
+                <button
+                    class="primary-btn hero-btn"
+                    onclick="scrollToRecommendation()"
+                >
+                    🌱 Find My Perfect Plant
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <section class="features">
+
+            <h2>
+                What Can PlantAI Do?
+            </h2>
+
+            <div class="feature-grid">
+
+                <div
+                    class="feature-card"
+                    onclick="scrollToRecommendation()"
+                >
+
+                    <div class="feature-icon">
+                        🌱
+                    </div>
+
+                    <h3>
+                        AI Recommendations
+                    </h3>
+
+                    <p>
+                        Find plants according to
+                        your environment, sunlight
+                        and maintenance preference.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="feature-card"
+                    onclick="scrollToCare()"
+                >
+
+                    <div class="feature-icon">
+                        💧
+                    </div>
+
+                    <h3>
+                        Plant Care
+                    </h3>
+
+                    <p>
+                        Learn about watering,
+                        sunlight, soil and
+                        everyday plant care.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="feature-card"
+                    onclick="showMyPlants()"
+                >
+
+                    <div class="feature-icon">
+                        🪴
+                    </div>
+
+                    <h3>
+                        My Plants
+                    </h3>
+
+                    <p>
+                        Save and manage your
+                        personal plant collection.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="feature-card"
+                    onclick="showPlantDoctor()"
+                >
+
+                    <div class="feature-icon">
+                        🩺
+                    </div>
+
+                    <h3>
+                        Plant Doctor
+                    </h3>
+
+                    <p>
+                        Select a plant problem
+                        and receive care suggestions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECOMMENDATIONS ================= -->
+
+        <section
+            id="recommend"
+            class="section"
+        >
+
+            <div class="section-container">
+
+                <h2>
+                    🌱 AI Plant Recommendations
+                </h2>
+
+                <p>
+                    Tell PlantAI about your environment.
+                </p>
+
+
+                <div class="form-grid">
+
+                    <div>
+
+                        <label>
+                            Where will you grow it?
+                        </label>
+
+                        <select id="environment">
+
+                            <option value="indoor">
+                                Indoor
+                            </option>
+
+                            <option value="outdoor">
+                                Outdoor
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            How much sunlight is available?
+                        </label>
+
+                        <select id="sunlight">
+
+                            <option value="low">
+                                Low sunlight
+                            </option>
+
+                            <option value="medium">
+                                Medium sunlight
+                            </option>
+
+                            <option value="high">
+                                High sunlight
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            How much maintenance do you prefer?
+                        </label>
+
+                        <select id="maintenance">
+
+                            <option value="low">
+                                Low maintenance
+                            </option>
+
+                            <option value="medium">
+                                Medium maintenance
+                            </option>
+
+                            <option value="high">
+                                High maintenance
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="recommendBtn"
+                    class="primary-btn"
+                >
+                    Get Recommendation 🌱
+                </button>
+
+
+                <div
+                    id="recommendationResult"
+                    class="result hidden"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MY PLANTS ================= -->
+
+        <section
+            id="myPlants"
+            class="section alternate"
+        >
+
+            <div class="section-container">
+
+                <h2>
+                    🪴 My Plant Collection
+                </h2>
+
+                <p>
+                    Your saved plants appear here.
+                </p>
+
+
+                <div
+                    id="myPlantsResult"
+                    class="result"
+                >
+
+                    <div class="empty-message">
+                        No plants loaded yet.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PLANT DOCTOR ================= -->
+
+        <section
+            id="doctor"
+            class="section"
+        >
+
+            <div class="section-container">
+
+                <h2>
+                    🩺 Plant Doctor
+                </h2>
+
+                <p>
+                    Select the problem your plant is experiencing.
+                </p>
+
+
+                <select id="plantProblem">
+
+                    <option value="">
+                        Select a problem
+                    </option>
+
+                    <option value="yellow">
+                        Yellow leaves
+                    </option>
+
+                    <option value="brown">
+                        Brown leaves
+                    </option>
+
+                    <option value="drooping">
+                        Drooping leaves
+                    </option>
+
+                    <option value="spots">
+                        Spots on leaves
+                    </option>
+
+                    <option value="dry">
+                        Dry soil
+                    </option>
+
+                    <option value="root">
+                        Root problems
+                    </option>
+
+                </select>
+
+
+                <br>
+
+
+                <button
+                    id="doctorBtn"
+                    class="primary-btn"
+                >
+                    🩺 Diagnose Plant
+                </button>
+
+
+                <div
+                    id="doctorResult"
+                    class="result hidden"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PLANT CARE ================= -->
+
+        <section
+            id="care"
+            class="section alternate"
+        >
+
+            <div class="section-container">
+
+                <h2>
+                    💚 Plant Care Guide
+                </h2>
+
+
+                <div class="care-grid">
+
+                    <div class="care-card">
+
+                        <div class="care-icon">
+                            💧
+                        </div>
+
+                        <h3>
+                            Watering
+                        </h3>
+
+                        <p>
+                            Check the soil before watering.
+                            Avoid keeping most plants constantly wet.
+                        </p>
+
+                    </div>
+
+
+                    <div class="care-card">
+
+                        <div class="care-icon">
+                            ☀️
+                        </div>
+
+                        <h3>
+                            Sunlight
+                        </h3>
+
+                        <p>
+                            Give your plant the amount
+                            of sunlight it needs.
+                        </p>
+
+                    </div>
+
+
+                    <div class="care-card">
+
+                        <div class="care-icon">
+                            🌱
+                        </div>
+
+                        <h3>
+                            Soil
+                        </h3>
+
+                        <p>
+                            Use suitable, well-draining
+                            soil for your plant.
+                        </p>
+
+                    </div>
+
+
+                    <div class="care-card">
+
+                        <div class="care-icon">
+                            ✂️
+                        </div>
+
+                        <h3>
+                            Pruning
+                        </h3>
+
+                        <p>
+                            Remove damaged leaves and
+                            stems using clean tools.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                🌿 PlantAI — Smart Plant Care
+            </p>
+
+        </footer>
+
+    </section>
+
+
+    <!-- IMPORTANT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
